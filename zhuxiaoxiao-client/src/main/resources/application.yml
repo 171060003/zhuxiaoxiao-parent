@@ -1,0 +1,29 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/,http://localhost:1112/eureka/
+  instance:
+    hostname: localhost
+#    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}:${server.port}
+    instanceId: ${spring.application.name}:${server.port}
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+spring:
+  application:
+    name: client
+
+
+---
+spring:
+  profiles: dev1
+server:
+  port: 8080
+
+
+---
+spring:
+  profiles: dev2
+server:
+  port: 8081
+zuul:
+  routes:

@@ -1,18 +1,37 @@
-server:
-  port: 1111
 eureka:
+  environment: ${spring.profiles}
   instance:
-    hostname: localhost
+    instanceId: ${spring.application.name}:${server.port}
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     eureka-server-port: ${server.port}
-
-
+  server:
+    enable-self-preservation: false
 spring:
   application:
     name: eureka
-  cloud:
-    config:
-      uri: http://localhost:${server.port}
 
+---
+spring:
+  profiles: dev1
+server:
+  port: 1111
+eureka:
+  client:
+    service-url:
+      defaultZone: http://p2:1112/eureka/
+  instance:
+    hostname: p1
+
+---
+spring:
+  profiles: dev2
+server:
+  port: 1112
+eureka:
+  client:
+    service-url:
+      defaultZone: http://p1:1111/eureka/
+  instance:
+    hostname: p2

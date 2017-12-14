@@ -1,0 +1,14 @@
+package com.zhuxiaoxiao.client;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@EnableEurekaClient
+@SpringBootApplication
+public class ZhuxiaoxiaoClientApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ZhuxiaoxiaoClientApplication.class, args);
+    }
+}
