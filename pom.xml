@@ -22,6 +22,8 @@
         <module>zhuxiaoxiao-eureka</module>
         <module>zhuxiaoxiao-client</module>
         <module>zhuxiaoxiao-consumer</module>
+        <module>zhuxiaoxiao-zuul</module>
+        <module>zhuaxiaoxiao-dashboard</module>
     </modules>
 
     <properties>
@@ -50,6 +52,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
     <dependencyManagement>

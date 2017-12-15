@@ -25,5 +25,3 @@ spring:
   profiles: dev2
 server:
   port: 8081
-zuul:
-  routes:

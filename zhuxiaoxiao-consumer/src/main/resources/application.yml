@@ -7,3 +7,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://p1:1111/eureka/,http://p2:1112/eureka/
+management:
+  port: 9001
